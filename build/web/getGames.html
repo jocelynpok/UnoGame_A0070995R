@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <script src="libs/jquery-3.1.0.js"></script>
+		<script src="libs/handlebars-v4.0.5.js"></script>
+		<script src="libs/index.js"></script>
+                <script id="tbodyTemplate" type="text/x-handlebars">
+			<tbody>
+				{{#each games}}
+					<tr>
+						<td> {{ this.gameId }}</td>
+						<td> {{ this.gName}}</td>
+                                                <td> {{ this.status}}</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</script>
+    </head>
+    <body>
+        <button type="button" id="getStud">Get</button>
+		<br>
+
+		<table border="1" id="resultTable">
+			<thead>
+				<tr>
+					<td>Id</td>
+					<td>Name</td>
+                                        <td>Status</td>
+				</tr>
+			</thead>
+			<tbody id="resultBody">
+			</tbody>
+		</table>
+
+    </body>
+</html>

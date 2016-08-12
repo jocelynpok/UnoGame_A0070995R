@@ -1,0 +1,147 @@
+<!--<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+--><!--<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="libs/jquery-3.1.0.js"></script>
+        <script src="libs/handlebars-v4.0.5.js"></script>
+        <script src="libs/index.js"></script>
+        <script id="rowTemplate" type="text/x-handlebars">
+            <tr>
+            <td>{{ game.gid }}</td>
+            <td>{{ game.gname }}</td>
+            </tr>
+        </script>
+    </head>
+    <body>
+        <h1>New Game</h1>
+
+        <form >
+            <p>
+                Game Name : <input type="text" name="gname" id="gname" />
+            </p>
+            <input type="button" value="Create New Game" id="createGameBtn" />
+            <button type="button" id="getStud">Get</button>
+        </form>
+        <table border="1" id="resultTable">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                </tr>
+            </thead>
+            <tbody id="resultBody">
+            </tbody>
+        </table>
+    </body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+
+        <script type="text/javascript" src="static/jquery.js"></script>
+        <link rel="stylesheet" href="static/chui-android-3.9.2.css">
+        <script src="libs/jquery-3.1.0.js"></script>
+        <script src="libs/handlebars-v4.0.5.js"></script>
+        <script src ="static/chui-3.9.2.js"></script>
+        <script src="libs/index.js"></script>
+       <script id="rowTemplate" type="text/x-handlebars">
+            <div data-gameId="{{this.gameId}}">
+            <h3>Id:{{ game.gid }}</h3>
+            <h2>Title:{{ game.gname }}</h2>
+            </div>
+        </script>
+   <script type="text/x-handlebars" id="playerTemplate">
+                    <ul>
+                    {{#each player }}
+                            <li>
+                                    <h3>{{ this }}</h3>
+                                    
+                            </li>
+                    {{/each}}
+                      <ul>
+            </script>
+    </head>
+
+
+    <body>
+        <!--Page to create game -->
+        <nav class ="current">
+            <h1>New Game</h1>
+        </nav>
+        <article id="login" class="current"> 
+            <section>
+                <div align ="center" >
+                    <h2> Please enter the game name</h2>
+                </div>
+                <div align ="center">
+                    <input id="gname" type="text" placeholder="Your Name">
+                </div>
+
+                <div align="center">
+                    <button id="createGameBtn" >Create</button>
+                </div>
+            </section>
+        </article>
+
+
+
+
+
+
+
+        <!--Page to start the game-->
+       <nav class = "next">
+            <button class="back" id ="backToCreate" ></button>
+            <h1>   Get ready to start </h1>
+        </nav>
+        <article id="gaming" class = "next">
+            <section>
+                <!--<div align="center">
+                     <h2> Id:</h2>
+                     <p id = Game></p>
+                 </div>
+                <div align="center" >
+                     <input id="gamesNameTb" type="text" placeholder="Your Name">
+                 </div>-->
+                <div id ="join" align ="center"></div>
+
+                <div align ="center"><button id="Start">Start</button></div>
+            </section>
+        </article>
+        
+       
+           <!--Page to display cards in hand-->
+       <nav class = "next">
+            <button class="back" ></button>
+            <h1>   Uno Gaming </h1>
+        </nav>
+        <article id="display" class = "next">
+            <section>
+                <div id="gameId"></div>
+              <ul id="playerList" class='list'>  
+                    
+                </ul>
+                <div id ="cards" align ="center"></div>
+                <div align ="center">
+                    <!-- images/B_7.png -->
+                    <img id="topcard" >
+                </div>
+              <!--  <div id ="displayCards" align ="center"></div>-->
+                
+               
+            </section>
+        </article>
+
+    </body>
+</html>
