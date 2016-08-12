@@ -1,0 +1,112 @@
+<!--<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!--<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+
+        <script type="text/javascript" src="static/jquery.js"></script>
+        <link rel="stylesheet" href="static/chui-android-3.9.2.css">
+        <script src="libs/jquery-3.1.0.js"></script>
+        <script src="libs/handlebars-v4.0.5.js"></script>
+        <script src ="static/chui-3.9.2.js"></script>
+        <script src = "chUI.js"></script>
+        <script type="text/x-handlebars" id="GameTemplate">
+            <ul>
+            {{#each games }}
+            <li data-gameId="{{this.gameId}}">
+            <h3>{{ this.gameId }}</h3>
+            <h4>{{ this.gName }}</h4>
+
+            </li>
+            {{/each}}
+            </ul>
+        </script>
+        <script type="text/x-handlebars" id="cardTemplate">
+            <ul>
+            {{#each cards }}
+            <li >
+            <img src = "images/{{this.id}}.png">
+            
+    
+            </li>
+            {{/each}}
+               </ul>
+        </script>
+    </head>
+    <body>
+
+
+
+
+        <!--Page to select Game to Play-->
+        <nav class="current">
+            <button type="button" id="reloadBtn" >Reload</button>
+            <h1>   Available Games </h1>
+        </nav>
+        <article id='joinGame' class="current">
+            <section>
+                <ul id="gameList" class='list'>  
+
+                </ul>
+                <div align ="center">Name: <input type="text" name="Name" value="" id="pName" /></div>
+                <div align="center">
+                    <button id="Join">Join</button>
+
+                </div>
+
+            </section>
+        </article>
+
+
+
+
+        <!--Page to Make connection and wait for all players-->
+        <nav class="next">
+            <button class="back" ></button>
+            <h1>   Waiting for Game to Start </h1>
+        </nav>
+        <article id="waitGame">
+            <section>
+                <div align="center">
+                    <button id="Start">Start</button>
+
+                </div>
+            </section>
+        </article>
+        <!--Page to Make connection and wait for all players-->
+        <nav class="next">
+            <button class="back" ></button>
+            <h1>   Start game with player's hand </h1>
+        </nav>
+        <article id="playersHand">
+            <section>
+                <div id = "gid"></div>
+                <div id = "pid"></div>
+                <ul id="cardList" class='list'>  
+
+                </ul>
+            </section>
+        </article>
+
+
+    </body>
+</html>
