@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+
+        <script type="text/javascript" src="static/jquery.js"></script>
+        <link rel="stylesheet" href="libs/jquery-ui-1.12.0.custom/jquery-ui.css">
+        <link rel="stylesheet" href="static/chui-android-3.9.2.css">
+         <script type="text/javascript" src="static/jquery.js"></script>
+              <link rel="stylesheet" href="index.css">
+        <script src="libs/jquery-3.1.0.js"></script>
+        <script src="libs/handlebars-v4.0.5.js"></script>
+        <script src ="static/chui-3.9.2.js"></script>
+        <script src="libs/jquery-ui-1.12.0.custom/jquery-ui.js"></script>
+       
+     
+        <script src="index.js"></script>
+        <script id="rowTemplate" type="text/x-handlebars">
+            <div data-gameId="{{this.gameId}}">
+            <h3>Id:{{ game.gid }}</h3>
+            <h2>Title:{{ game.gname }}</h2>
+            </div>
+        </script>
+        <!--        <script type="text/x-handlebars" id="playerTemplate">
+                    <ul>
+                    {{#each player }}
+                    <li >
+                    
+                    <h3>{{ this }}</h3>
+                       
+                    </li>
+                    {{/each}}
+                    <ul>
+                </script>-->
+<!--       <script id="playerTemplate" type="text/x-handlebars">
+
+
+            {{#each player }}
+                <div  data-player = "{{this}}" data-target = "x" >
+                    <img src = "images/User.png">
+                    <h3>{{ this }}</h3>
+
+                </div>
+            {{/each}}
+        </script>-->
+       <script id="playerTemplate" type="text/x-handlebars">
+
+
+            {{#each player }}
+                <li data-player = "{{this}}" >
+                    <div data-target = "{{this}}" >
+                        <img src = "images/User.png">
+                        <h3>{{ this }}</h3>
+                    </div>
+                </li>
+            {{/each}}
+        </script>
+    </head>
+
+
+    <body>
+        <!--Page to create game -->
+        <nav class ="current">
+            <h1>New Game</h1>
+        </nav>
+        <article id="login" class="current"> 
+            <section>
+                <div align ="center" >
+                    <h2> Please enter the game name</h2>
+                </div>
+                <div align ="center">
+                    <input id="gname" type="text" placeholder="Your Name" name = "gName">
+                </div>
+
+                <div align="center">
+                    <button id="createGameBtn" >Create</button>
+                </div>
+            </section>
+        </article>
+
+
+
+
+
+
+
+        <!--Page to start the game-->
+        <nav class = "next">
+            <button class="back" id ="backToCreate" ></button>
+            <h1>   Get ready to start </h1>
+        </nav>
+        <article id="gaming" class = "next">
+            <section>
+               
+                <h2>Player List:</h2>
+                <ul id="playerListSummary" class='list'>  
+
+                </ul>
+                <div id ="join" align ="center"></div>
+
+                <div align ="center"><button id="Start">Start</button></div>
+            </section>
+        </article>
+
+
+        <!--Page to display cards in hand-->
+        <nav class = "next">
+            <button class="back" ></button>
+            <h1>   Uno Gaming </h1>
+        </nav>
+        <article id="display" class = "next">
+            <section>
+               
+                <table>
+                    <tr>
+                    
+                        <td id ="players">
+                            <ul id ="playerList"></ul>
+                        </td>
+                        <td id = "tableDiscard" >
+                            <img id="tableDiscardCard" data-element = "x" data-discard class ="special">
+                                 
+                        </td>
+                    
+                    <td id = "tableDraw" >
+                        
+                     <img id="tableDrawCard"  data-element = "x" data-draw="x" class ="special">                        
+                    </td>
+                    </tr>
+
+                </table>
+
+            </section>
+        </article>
+
+    </body>
+</html>
