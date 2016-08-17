@@ -1,0 +1,8 @@
+{
+    "name": "testWebSocketClient",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "jocelyn",
+    "contributors": [],
+    "dependencies": {}
+}
